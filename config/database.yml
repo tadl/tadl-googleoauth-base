@@ -6,12 +6,14 @@ default: &default
 
 development:
   <<: *default
-  database: summer_reading-development
-  username: action
+  database: app-development
+  username: postgres
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 test:
   <<: *default
-  database: summer_reading-test
-  username: action
+  database: app-test
+  username: postgres
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 
