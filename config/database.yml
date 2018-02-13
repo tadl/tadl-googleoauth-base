@@ -6,13 +6,13 @@ default: &default
 
 development:
   <<: *default
-  database: app-development
+  database: <%= ENV['APP_NAME'] %>-development
   username: postgres
   password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 test:
   <<: *default
-  database: app-test
+  database: <%= ENV['APP_NAME'] %>-test
   username: postgres
   password: <%= ENV['POSTGRES_PASSWORD'] %>
 
